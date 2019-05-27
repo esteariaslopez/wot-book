@@ -15,7 +15,7 @@
   <div id="chart" style="width: 900px; height: 500px"></div>
   <script type="text/javascript">
 $(document).ready(function () {
-  var maxDataPoints = 10;
+  var maxDataPoints = 100;
   var chart = new google.visualization.LineChart($('#chart')[0]); //#A
   var data = google.visualization.arrayToDataTable([ //#B
     ['Time', 'Temperature'],
@@ -46,7 +46,7 @@ $(document).ready(function () {
   }
 
   function doPoll() { //#F
-    $.getJSON('http://devices.webofthings.io/pi/sensors/temperature/value',
+    $.getJSON('http://100.100.100.5:8484/pi/sensors/temperature',
       function (result) {
         addDataPoint(result); //#G
         setTimeout(doPoll, 2000);

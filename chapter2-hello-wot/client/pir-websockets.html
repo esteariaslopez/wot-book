@@ -8,7 +8,7 @@
 
 <script type="text/javascript">
     function subscribeToSensor(sensor) {
-        var socket = new WebSocket('ws://devices.webofthings.io/pi/sensors/' + sensor,'wot'); //#A
+        var socket = new WebSocket('ws://100.100.100.5/pi/sensors/' + sensor,'wot'); //#A
 
         socket.onmessage = function (event) { //#B
             var result = JSON.parse(event.data);
